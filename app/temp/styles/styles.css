@@ -1,0 +1,8 @@
+body {
+    background: #ccc;
+    margin: 10px;
+    -webkit-columns: 300px 2;
+       -moz-columns: 300px 2;
+            columns: 300px 2;
+
+}

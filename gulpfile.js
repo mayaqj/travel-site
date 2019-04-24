@@ -1,6 +1,9 @@
 var
 gulp = require('gulp'),
-watch = require('gulp-watch');
+watch = require('gulp-watch'),
+postcss = require('gulp-postcss'),
+autoprefixer = require('autoprefixer'),
+cssvars = require('postcss-simple-vars');
 
 // GULP TEST
 gulp.task('default', function(cb) {
@@ -20,15 +23,19 @@ gulp.task('watch', function() {
 });
 
 
-// GULP HTML & CSS
+// GULP HTML
 gulp.task('html', html);
 function html(done) {
-    console.log('Something useful happening to HTML here');
+    console.log('HTML is running, Biyatch!');
     if(done) done();
 };
-
+// GULP CSS
 gulp.task('styles', styles);
 function styles(done) {
-    console.log("SASS or Post CSS running here");
+    gulp.src('./app/assets/styles/styles.css')
+        .pipe(postcss([cssvars, autoprefixer]))
+        .pipe(gulp.dest('./app/temp/styles'));
+    
+    console.log("Post CSS is running correctly BIYATCH!");
     if(done) done();
 }

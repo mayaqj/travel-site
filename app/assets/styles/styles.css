@@ -1,4 +1,8 @@
+$maingrey: #ccc;
+
 body {
-    background: #ccc;
-    text-align: center;
+    background: $maingrey;
+    margin: 10px;
+    columns: 300px 2;
+
 }
